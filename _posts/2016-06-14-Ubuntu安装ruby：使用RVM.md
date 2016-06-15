@@ -40,5 +40,5 @@ description:
 
 这样系统中的Ruby版本就被设置为了2.3.0
 
-更详细的教程可以参考ruby-china的这篇教程：https://ruby-china.org/wiki/rvm-guide
+更详细的教程可以参考ruby-china的这篇教程：[https://ruby-china.org/wiki/rvm-guide](https://ruby-china.org/wiki/rvm-guide)
 
