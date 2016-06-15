@@ -8,22 +8,22 @@ url: "https://hotwill.github.io" # the base hostname & protocol for your site
 rss_url: /pages/feed.xml
 author: Zhuang Hu
 twitter:
-  username: huzhuangz@hotmail.com
+  username: zhuang_hu
 
 # Sidebar filter
 # Choose 'tag' or 'category' as filter in sidebar.
 filter: 'category'
 
 # Social account
-twitter: huzhuangz@hotmail.com
+twitter: zhuang_hu
 # weibo:    ID
 github: Hotwill
 # codepen:  username
 # dribbble: username
 
 # avatar头像及Favicon
-avatar: http://7u2ho6.com1.z0.glb.clouddn.com/site-avatar.png
-favicon: http://7u2ho6.com1.z0.glb.clouddn.com/site-favicon.ico
+avatar: /assets/img/site-avatar.png
+favicon: /assets/img/site-avatar.png
 
 # disqus 设置
 disqus:
