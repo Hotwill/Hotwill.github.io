@@ -16,6 +16,7 @@ description:
 	$ source ~/.bash_profile
 
 修改 RVM 的 Ruby 安装源到 Ruby China 的 Ruby 镜像服务器，这样能提高安装速度:
+
 	$ echo "ruby_url=https://cache.ruby-china.org/pub/ruby" > ~/.rvm/user/db
 
 ## Ruby 的安装与切换
