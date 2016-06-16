@@ -1,6 +1,8 @@
 ### 我的博客
 
-地址：[http://yansu.org](http://yansu.org)
+地址：[https://hotwill.github.io](https://hotwill.github.io)
+
+### 特别感谢闫肃的博客[模板](https://github.com/suyan/suyan.github.io)
 
 ### 安装说明
 
