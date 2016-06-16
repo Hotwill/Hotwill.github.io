@@ -5,7 +5,7 @@ category: Linux
 tags: [Ruby, RVM]
 keywords: Ruby,RVM,安装,多版本
 description: 
----
+--- 
 
 直接在Ubuntu的软件源中安装ruby，只能安装1.9.1的，无法安装最新版。有些软件依赖于Ruby 2，而有些软件依赖于Ruby旧的版本。使用rvm可以很好地解决这个问题。RVM 是一个命令行工具，可以提供一个便捷的多版本 Ruby 环境的安装、管理和切换。
 
