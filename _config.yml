@@ -48,3 +48,12 @@ gems:
   - jekyll-seo-tag
   - jekyll-feed
 
+#baidu tongji
+baiduTongji:
+  config: true
+  id: c12b560f0372d5995701449b9eac606c
+
+googleAnaly:
+  config: true
+	id: UA-58146229-1
+
