@@ -29,11 +29,6 @@ favicon: /assets/img/site-avatar.png
 disqus:
   shortname: Hotwill
 
-# google analytics 设置
-ga:
-  id: UA-75855965-1
-  url: hotwill.github.io
-
 # Build settings
 permalink: /:year/:month/:day/:title.html
 markdown: kramdown
@@ -48,12 +43,13 @@ gems:
   - jekyll-seo-tag
   - jekyll-feed
 
-#baidu tongji
+# baidu tongji
 baiduTongji:
   config: true
   id: c12b560f0372d5995701449b9eac606c
 
+# google analytics
 googleAnaly:
   config: true
-	id: UA-58146229-1
+  id: UA-58146229-1
 
