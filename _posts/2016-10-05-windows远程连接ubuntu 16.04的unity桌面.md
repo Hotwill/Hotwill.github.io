@@ -45,10 +45,10 @@ description: windows远程连接ubuntu的方法
 
     for indicator in /usr/lib/x86_64-linux-gnu/indicator-*; 
     do
-    basename=`basename ${indicator}`
-    dirname=`dirname ${indicator}`
-    service=${dirname}/${basename}/${basename}-service
-    ${service} &
+        basename=`basename ${indicator}`
+        dirname=`dirname ${indicator}`
+        service=${dirname}/${basename}/${basename}-service
+        ${service} &
     done
 
     unity
