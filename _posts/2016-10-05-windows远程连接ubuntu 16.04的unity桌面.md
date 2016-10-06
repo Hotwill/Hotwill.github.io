@@ -17,8 +17,7 @@ description: windows远程连接ubuntu的方法
 
     wget http://www.c-nergy.be/downloads/tigervncserver_1.6.80-4_amd64.zip
 
-下载好之后解压得到tigervncserver_1.6.80-4_amd64.deb
-
+下载好之后解压得到tigervncserver_1.6.80-4_amd64.deb  
 然后安装：
 
     sudo dpkg -i tigervncserver_1.6.80-4_amd64.deb
