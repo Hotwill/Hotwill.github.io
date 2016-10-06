@@ -9,7 +9,7 @@ description:
 
 最近发现通过搭建vpn server的方式可以实现手机免流量，参考了骚逼汪的[教程](http://www.sbwml.cn/vpn/)。按照教程的步骤，在centos6和centos7上都测试成功了。
 
-需要用到两个脚本程序，为了防止以后找不到，我把他们放在我的百度网盘里面。其中vpn6试用与centos6，vpn7试用于centos7。
+需要用到两个脚本程序，为了防止以后找不到，我把他们放在我的百度网盘里面。其中vpn6适用与centos6，vpn7适用于centos7。
 
 服务器搭建好之后，手机通过 openvpn client 连接服务器就能实现免流，连接的时候需要导入服务器生成的.ovpn配置文件。
 
