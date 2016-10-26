@@ -1,12 +1,12 @@
 # Site settings
-title: 胡壮的个人博客
+title: Hotwill的个人博客
 email: huzhuang2012@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  胡壮的博客
+  Hotwill的个人博客
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://hotwill.github.io" # the base hostname & protocol for your site
 rss_url: /pages/feed.xml
-author: Zhuang Hu
+author: Hotwill
 twitter:
   username: zhuang_hu
 
