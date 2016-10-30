@@ -171,4 +171,4 @@ exit 0
 
 ```
 
-执行 `sudo bash setup.sh -u <user> -p <153733422>` 就可以了。
+执行 `sudo bash setup.sh -u <user> -p <mypass>` 就可以了。
