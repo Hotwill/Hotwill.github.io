@@ -45,7 +45,7 @@ gems:
 
 # baidu tongji
 baiduTongji:
-  config: true
+  config: false
   id: c12b560f0372d5995701449b9eac606c
 
 # google analytics

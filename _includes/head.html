@@ -36,17 +36,16 @@
   </script>
 
   <!-- 百度统计代码 -->
-  {% if site.baiduTongji.config %}
-  <script>
-      var _hmt = _hmt || [];
-      (function() {
-          var hm = document.createElement("script");
-          hm.src = "//hm.baidu.com/hm.js?" + "{{ site.baiduTongji.id }}";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-      })();
-  </script>
-  {% endif %}
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?b879433fe46150caf2f5f58d9475faf7";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+
 
   <!-- Google Analy 代码 -->
   {% if site.googleAnaly.config %}

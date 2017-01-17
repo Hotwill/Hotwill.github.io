@@ -1,24 +1,24 @@
 #!/bin/bash
-# É§±ÆÍô? °æÈ¨ËùÓÐ£¬¾Ü¾øµÁ°æ
-# ×ªÔØÇë×¢Ã÷³ö´¦
-web="http://"; #É§±ÆÍô?
-webs="https://"; #É§±ÆÍô?
-error="Authorization failure."; #É§±ÆÍô?
-# ½Å±¾ÓÉÐ¡Ä¸Öí±àÐ´
+# éªšé€¼æ±ª? ç‰ˆæƒæ‰€æœ‰ï¼Œæ‹’ç»ç›—ç‰ˆ
+# è½¬è½½è¯·æ³¨æ˜Žå‡ºå¤„
+web="http://"; #éªšé€¼æ±ª?
+webs="https://"; #éªšé€¼æ±ª?
+error="Authorization failure."; #éªšé€¼æ±ª?
+# è„šæœ¬ç”±å°æ¯çŒªç¼–å†™
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
-export PATH #É§±ÆÍô?
-clear; #É§±ÆÍô?
+export PATH #éªšé€¼æ±ª?
+clear; #éªšé€¼æ±ª?
 cd /
 # Logo	******************************************************************
 key="a1af1b01812237a1d92c184a10b451a8"
 CopyrightLogo='
 ==========================================================================
 							  
-			CentOS OpenVPN-2.3.10 ÔÆÃâ·þÎñÆ÷				     
+			CentOS OpenVPN-2.3.10 äº‘å…æœåŠ¡å™¨				     
 			 Powered by sbwml.cn 2015-2016			   
 			       All Rights Reserved		    
 									    
-						   by Ð¡Ä¸Öí 2016-04-06		  
+						   by å°æ¯çŒª 2016-04-06		  
 ==========================================================================';
 echo "$CopyrightLogo";
 # FILES  ******************************************************************
@@ -51,26 +51,26 @@ LOGO=`wget ${web}${MirrorHost}/${ServerLocation}/md/ -O - -q ; echo` && pass=`wg
 copyright=`echo -n $LOGO|md5sum`
 curls=transfer.sh;
 echo 
-echo "½Å±¾ÒÑÓÉ°¢ÀïÔÆ/ÌÚÑ¶ÔÆ CentOS6.x ²âÊÔÍ¨¹ý"
+echo "è„šæœ¬å·²ç”±é˜¿é‡Œäº‘/è…¾è®¯äº‘ CentOS6.x æµ‹è¯•é€šè¿‡"
 echo 
-#echo -n "ÇëÊäÈëÊÚÈ¨Âë£º "
+#echo -n "è¯·è¾“å…¥æŽˆæƒç ï¼š "
 #read PASSWD
 #key2=$PASSWD
 key2=$pass
-# %% ±íÊ¾È¥µôÓÒ±ß×î³¤µÄÆ¥Åä£¬
-# ${key2%%\ *}±íÊ¾È¥µôkey2ÖÐµÚÒ»¸ö¿Õ¸ñ¼°ÆäÒÔºóµÄ×Ó´®
+# %% è¡¨ç¤ºåŽ»æŽ‰å³è¾¹æœ€é•¿çš„åŒ¹é…ï¼Œ
+# ${key2%%\ *}è¡¨ç¤ºåŽ»æŽ‰key2ä¸­ç¬¬ä¸€ä¸ªç©ºæ ¼åŠå…¶ä»¥åŽçš„å­ä¸²
 if [[ ${key2%%\ *} == $pass ]]
     then
 	echo 
-	echo ÊÚÈ¨³É¹¦£¡[±¾»úIP£º$IPAddress]
+	echo æŽˆæƒæˆåŠŸï¼[æœ¬æœºIPï¼š$IPAddress]
     else
 	echo
-	echo "ÊÚÈ¨Ê§°Ü£¡"
+	echo "æŽˆæƒå¤±è´¥ï¼"
 OPW='
 ==========================================================================
-			  É§±ÆÍô?·þÎñÊÚÈ¨Ê§°Ü£¬°²×°±»ÖÕÖ¹
+			  éªšé€¼æ±ª?æœåŠ¡æŽˆæƒå¤±è´¥ï¼Œå®‰è£…è¢«ç»ˆæ­¢
 
-			    OpenVPN-2.3.10 °²×°Ê§°Ü 			       
+			    OpenVPN-2.3.10 å®‰è£…å¤±è´¥ 			       
 			 Powered by sbwml.cn 2015-2016			   
 			      All Rights Reserved		   
 									    
@@ -82,30 +82,30 @@ echo
 function InputIPAddress()
 {
 	if [ "$IPAddress" == '' ]; then
-		echo 'ÎÞ·¨¼ì²âÄúµÄIP';
-		read -p 'ÇëÊäÈëÄúµÄ¹«ÍøIP:' IPAddress;
+		echo 'æ— æ³•æ£€æµ‹æ‚¨çš„IP';
+		read -p 'è¯·è¾“å…¥æ‚¨çš„å…¬ç½‘IP:' IPAddress;
 		[ "$IPAddress" == '' ] && InputIPAddress;
 	fi;
-	[ "$IPAddress" != '' ] && echo -n '[  OK  ] ÄúµÄIPÊÇ:' && echo $IPAddress;
+	[ "$IPAddress" != '' ] && echo -n '[  OK  ] æ‚¨çš„IPæ˜¯:' && echo $IPAddress;
 	sleep 2
 }
 # sbwml
 rm -rf /passwd
-echo "ÏµÍ³ÕýÔÚ°²×°OpenVPN·þÎñ£¬ÇëÄÍÐÄµÈ´ý£º"
+echo "ç³»ç»Ÿæ­£åœ¨å®‰è£…OpenVPNæœåŠ¡ï¼Œè¯·è€å¿ƒç­‰å¾…ï¼š"
 echo 
-echo -n "ÕýÔÚ¼ì²âÍø¿¨..."
+echo -n "æ­£åœ¨æ£€æµ‹ç½‘å¡..."
 if [ ! -e "/dev/net/tun" ];
     then
 	    echo
-		echo "°²×°±»ÖÕÖ¹£¡"
-	echo "TUN/TAPÍø¿¨Î´¿ªÆô£¬ÇëÁªÏµ·þÎñÉÌ¿ªÆôTUN/TAP¡£"
+		echo "å®‰è£…è¢«ç»ˆæ­¢ï¼"
+	echo "TUN/TAPç½‘å¡æœªå¼€å¯ï¼Œè¯·è”ç³»æœåŠ¡å•†å¼€å¯TUN/TAPã€‚"
 		echo 
-		echo "Èç¹ûÄãÊÇÍøÒ×·ä³²Centos 6.7£¬Çëµ½É§±ÆÍô¹ÙÍø²é¿´ÍøÒ×·ä³²·þÎñ°²×°·½Ê½£¡"
+		echo "å¦‚æžœä½ æ˜¯ç½‘æ˜“èœ‚å·¢Centos 6.7ï¼Œè¯·åˆ°éªšé€¼æ±ªå®˜ç½‘æŸ¥çœ‹ç½‘æ˜“èœ‚å·¢æœåŠ¡å®‰è£…æ–¹å¼ï¼"
 	exit 0;
 	else
 	    echo "		   [  OK  ]"
 fi
-echo "ÕýÔÚ²¿Êð»·¾³..."
+echo "æ­£åœ¨éƒ¨ç½²çŽ¯å¢ƒ..."
 sleep 1
 service openvpn stop >/dev/null 2>&1
 killall squid >/dev/null 2>&1
@@ -115,13 +115,13 @@ rm -rf /home/openvpn.tar.gz
 rm -rf /bin/port
 rm -rf /etc/squid
 rm -rf /passwd
-echo "°²×°Ö´ÐÐÃüÁî...£¨ÕýÔÚºóÌ¨°²×°£¬ÇëÄÍÐÄµÈ´ý£©"
+echo "å®‰è£…æ‰§è¡Œå‘½ä»¤...ï¼ˆæ­£åœ¨åŽå°å®‰è£…ï¼Œè¯·è€å¿ƒç­‰å¾…ï¼‰"
 yum install -y redhat-lsb curl gawk tar httpd-devel expect
 chkconfig openvpn off
 service httpd stop >/dev/null 2>&1
 # sbwml
 version=`lsb_release -a | grep -e Release|awk -F ":" '{ print $2 }'|awk -F "." '{ print $1 }'`
-echo "ÕýÔÚÆ¥ÅäÈí¼þÔ´..."
+echo "æ­£åœ¨åŒ¹é…è½¯ä»¶æº..."
 sleep 3
 if [ $version == "5" ];then
     if [ $(getconf LONG_BIT) = '64' ] ; then
@@ -144,11 +144,11 @@ if [ ! $version ];then
     clear
     echo ==========================================================================
     echo 
-    echo "°²×°±»ÖÕÖ¹£¬ÇëÔÚCentosÏµÍ³ÉÏÖ´ÐÐ²Ù×÷..."
+    echo "å®‰è£…è¢«ç»ˆæ­¢ï¼Œè¯·åœ¨Centosç³»ç»Ÿä¸Šæ‰§è¡Œæ“ä½œ..."
     echo
 # Logo	******************************************************************
 CO='
-			    OpenVPN-2.3.10 °²×°Ê§°Ü 			       
+			    OpenVPN-2.3.10 å®‰è£…å¤±è´¥ 			       
 			 Powered by sbwml.cn 2015-2016			   
 			      All Rights Reserved		   
 									    
@@ -158,9 +158,9 @@ CO='
 fi
 PP='
 ==========================================================================
-			  É§±ÆÍô?·þÎñÑéÖ¤Ê§°Ü£¬°²×°±»ÖÕÖ¹
+			  éªšé€¼æ±ª?æœåŠ¡éªŒè¯å¤±è´¥ï¼Œå®‰è£…è¢«ç»ˆæ­¢
 
-			    OpenVPN-2.3.10 °²×°Ê§°Ü 			       
+			    OpenVPN-2.3.10 å®‰è£…å¤±è´¥ 			       
 			 Powered by sbwml.cn 2015-2016			   
 			      All Rights Reserved		   
 									    
@@ -173,11 +173,11 @@ if [[ ${copyright%%\ *} == $key ]]
 	echo "$PP";
 	exit 0;
 fi
-echo "¼ì²é²¢¸üÐÂÈí¼þ..."
+echo "æ£€æŸ¥å¹¶æ›´æ–°è½¯ä»¶..."
 sleep 3
 yum update -y
 # OpenVPN Installing ****************************************************************************
-echo "ÅäÖÃÍøÂç»·¾³..."
+echo "é…ç½®ç½‘ç»œçŽ¯å¢ƒ..."
 sleep 3
 iptables -F >/dev/null 2>&1
 service iptables save >/dev/null 2>&1
@@ -243,7 +243,7 @@ kernel.shmall = 4294967296
 	exit 0;
 fi
 # OpenVPN Installing ****************************************************************************
-echo "ÕýÔÚ°²×°Ö÷³ÌÐò..."
+echo "æ­£åœ¨å®‰è£…ä¸»ç¨‹åº..."
 sleep 3
 yum install -y squid openssl openssl-devel lzo lzo-devel pam pam-devel automake pkgconfig
 yum install -y openvpn
@@ -259,7 +259,7 @@ rm -rf /etc/openvpn/${RSA}
 cd /etc/squid/
 rm -rf ./${sq}
 rm -rf ./squid_passwd
-echo "ÕýÔÚÆôÓÃsquid×ª·¢..."
+echo "æ­£åœ¨å¯ç”¨squidè½¬å‘..."
 sleep 2
 proxy=`echo -n $MirrorHost|md5sum`
 if [[ $ipmd == ${proxy%%\ *} ]]
@@ -304,7 +304,7 @@ cache_mgr Welcome_to_use_OpenVPN_For_www.sbwml.cn
 	exit 0;
 fi
 clear
-echo "ÕýÔÚ¼ÓÃÜHTTP Proxy´úÀí¶Ë¿Ú..."
+echo "æ­£åœ¨åŠ å¯†HTTP Proxyä»£ç†ç«¯å£..."
 echo 
 if [[ $ipmd == ${proxy%%\ *} ]]
     then
@@ -323,11 +323,11 @@ cd /etc/openvpn
 cd /etc/openvpn/easy-rsa/
 source vars  2>&1
 ./clean-all  2>&1
-echo "ÕýÔÚÐ´Èë¿ì½ÝÆô¶¯ÃüÁî£º vpn"
+echo "æ­£åœ¨å†™å…¥å¿«æ·å¯åŠ¨å‘½ä»¤ï¼š vpn"
 sleep 2
 if [[ $ipmd == ${proxy%%\ *} ]]
     then
-		echo "echo ÕýÔÚÖØÆô·þÎñ...
+		echo "echo æ­£åœ¨é‡å¯æœåŠ¡...
 killall squid >/dev/null 2>&1
 squid -z >/dev/null 2>&1
 squid -s >/dev/null 2>&1
@@ -336,7 +336,7 @@ squid -z >/dev/null 2>&1
 squid -s >/dev/null 2>&1
 killall openvpn >/dev/null 2>&1
 service openvpn start
-echo ·þÎñÒÑÆô¶¯
+echo æœåŠ¡å·²å¯åŠ¨
 exit 0;
 " >/bin/vpn
 		chmod 0755 /bin/vpn
@@ -349,30 +349,30 @@ clear
 echo 
 if [[ $ipmd == ${proxy%%\ *} ]]
     then
-		echo "ÕýÔÚÉú³ÉCA/·þÎñ¶ËÖ¤Êé..."
+		echo "æ­£åœ¨ç”ŸæˆCA/æœåŠ¡ç«¯è¯ä¹¦..."
 		./ca && ./centos centos >/dev/null 2>&1
-		echo "Ö¤Êé´´½¨Íê³É "
+		echo "è¯ä¹¦åˆ›å»ºå®Œæˆ "
     else
 		yum remove openvpn squid passwd >/dev/null 2>&1
 		echo "$PP";
 		exit 0;
 fi
 sleep 2
-echo "ÕýÔÚÉú³ÉTLSÃÜÔ¿..."
+echo "æ­£åœ¨ç”ŸæˆTLSå¯†é’¥..."
 sleep 2
 openvpn --genkey --secret ta.key
 #echo 
-#echo "ÕýÔÚÉú³É¿Í»§¶ËÖ¤Êé¡°user01¡±£¬Çë¸ù¾ÝÌáÊ¾ÊäÈë y ½øÐÐÈ·ÈÏ£¬°´»Ø³µ¼ÌÐø"
+#echo "æ­£åœ¨ç”Ÿæˆå®¢æˆ·ç«¯è¯ä¹¦â€œuser01â€ï¼Œè¯·æ ¹æ®æç¤ºè¾“å…¥ y è¿›è¡Œç¡®è®¤ï¼ŒæŒ‰å›žè½¦ç»§ç»­"
 #read
 #./build-key user01
 #echo 
 #clear
-echo "ÕýÔÚÉú³ÉSSL¼ÓÃÜÖ¤Êé£¬ÕâÊÇÒ»¸öÂþ³¤µÄµÈ´ý¹ý³Ì..."
+echo "æ­£åœ¨ç”ŸæˆSSLåŠ å¯†è¯ä¹¦ï¼Œè¿™æ˜¯ä¸€ä¸ªæ¼«é•¿çš„ç­‰å¾…è¿‡ç¨‹..."
 sleep 1
 ./build-dh
 # OpenVPN Installing ****************************************************************************
 echo 
-echo "ÕýÔÚÆô¶¯·þÎñ..."
+echo "æ­£åœ¨å¯åŠ¨æœåŠ¡..."
 sleep 2
 service openvpn start
 chkconfig openvpn on
@@ -396,13 +396,13 @@ cd /home/ >/dev/null 2>&1
 clear
 echo
 echo 
-echo "ÕýÔÚÉú³ÉOpenVPN.ovpnÅäÖÃÎÄ¼þ..."
+echo "æ­£åœ¨ç”ŸæˆOpenVPN.ovpné…ç½®æ–‡ä»¶..."
 echo 
 echo 
-echo "Ð´ÈëÇ°¶Ë´úÂë"
+echo "å†™å…¥å‰ç«¯ä»£ç "
 sleep 3
-echo '# É§±ÆÍôÔÆÃâÅäÖÃ
-# ±¾ÎÄ¼þÓÉÏµÍ³×Ô¶¯Éú³É
+echo '# éªšé€¼æ±ªäº‘å…é…ç½®
+# æœ¬æ–‡ä»¶ç”±ç³»ç»Ÿè‡ªåŠ¨ç”Ÿæˆ
 setenv IV_GUI_VER "de.blinkt.openvpn 0.6.17" 
 machine-readable-output
 client
@@ -410,7 +410,7 @@ dev tun
 connect-retry-max 5
 connect-retry 5
 resolv-retry 60
-########ÃâÁ÷´úÂë########
+########å…æµä»£ç ########
 http-proxy-option EXT1 "POST http://rd.go.10086.cn" 
 http-proxy-option EXT1 "GET http://rd.go.10086.cn" 
 http-proxy-option EXT1 "X-Online-Host: rd.go.10086.cn" 
@@ -420,11 +420,11 @@ http-proxy-option EXT1 "POST http://rd.go.10086.cn"
 http-proxy-option EXT1 "Host: rd.go.10086.cn" 
 http-proxy-option EXT1 "GET http://rd.go.10086.cn" 
 http-proxy-option EXT1 "Host: rd.go.10086.cn"' >ovpn.1
-echo Ð´Èë´úÀí¶Ë¿Ú £¨$IPAddress:$port£©
+echo å†™å…¥ä»£ç†ç«¯å£ ï¼ˆ$IPAddress:$portï¼‰
 sleep 2
 echo http-proxy $IPAddress $port >myip
 cat ovpn.1 myip>ovpn.2
-echo '########ÃâÁ÷´úÂë########
+echo '########å…æµä»£ç ########
 ' >ovpn.3
 cat ovpn.2 ovpn.3>ovpn.4
 echo "<http-proxy-user-pass>" >>ovpn.4
@@ -432,10 +432,10 @@ echo ${squsername} >>ovpn.4
 echo ${sqpasswd} >>ovpn.4
 echo "</http-proxy-user-pass>
 " >>ovpn.4
-echo Ð´ÈëOpenVPN¶Ë¿Ú £¨$IPAddress:$vpnport£©
+echo å†™å…¥OpenVPNç«¯å£ ï¼ˆ$IPAddress:$vpnportï¼‰
 echo remote $IPAddress $vpnport tcp-client >ovpn.5
 cat ovpn.4 ovpn.5>ovpn.6
-echo "Ð´ÈëÖÐ¶Ë´úÂë"
+echo "å†™å…¥ä¸­ç«¯ä»£ç "
 sleep 2
 echo 'resolv-retry infinite
 nobind
@@ -445,17 +445,17 @@ push route 114.114.114.114 114.114.115.115
 
 <ca>' >ovpn.7
 cat ovpn.6 ovpn.7>ovpn.8
-echo "Ð´ÈëCAÖ¤Êé"
+echo "å†™å…¥CAè¯ä¹¦"
 sleep 2
 cat ovpn.8 ca.crt>ovpn.9
 echo '</ca>
 key-direction 1
 <tls-auth>' >ovpn.10
 cat ovpn.9 ovpn.10>ovpn.11
-echo "Ð´ÈëTLSÃÜÔ¿"
+echo "å†™å…¥TLSå¯†é’¥"
 sleep 2
 cat ovpn.11 ta.key>ovpn.12
-echo "Ð´Èëºó¶Ë´úÂë"
+echo "å†™å…¥åŽç«¯ä»£ç "
 sleep 2
 echo '</tls-auth>
 auth-user-pass
@@ -463,25 +463,25 @@ ns-cert-type server
 comp-lzo
 verb 3
 ' >ovpn.13
-echo "Éú³ÉOpenVPN.ovpnÎÄ¼þ"
+echo "ç”ŸæˆOpenVPN.ovpnæ–‡ä»¶"
 sleep 2
 cat ovpn.12 ovpn.13>OpenVPN.ovpn
-echo "ÅäÖÃÎÄ¼þÖÆ×÷Íê±Ï"
+echo "é…ç½®æ–‡ä»¶åˆ¶ä½œå®Œæ¯•"
 echo
 sleep 2
 clear
 echo 
-echo "´´½¨OpenVPNÁ¬½ÓÕËºÅ"
+echo "åˆ›å»ºOpenVPNè¿žæŽ¥è´¦å·"
 echo 
-echo -n "  ÊäÈëÐÂÕËºÅ£º"
+echo -n "  è¾“å…¥æ–°è´¦å·ï¼š"
 read ADMIN
 if [ -z $ADMIN ]
 	then
-		echo -n "  ÕËºÅ²»ÄÜÎª¿Õ£¬ÇëÖØÐÂÊäÈë£º"
+		echo -n "  è´¦å·ä¸èƒ½ä¸ºç©ºï¼Œè¯·é‡æ–°è¾“å…¥ï¼š"
 		read ADMIN
 			if [ -z $ADMIN ]
 				then
-					echo  "  ÊäÈë´íÎó£¬ÏµÍ³´´½¨Ä¬ÈÏÕËºÅ£ºroot"
+					echo  "  è¾“å…¥é”™è¯¯ï¼Œç³»ç»Ÿåˆ›å»ºé»˜è®¤è´¦å·ï¼šroot"
 					ADMIN=root;
 				else
 					username=root;
@@ -489,15 +489,15 @@ if [ -z $ADMIN ]
 else
 	username=root;
 fi 
-echo -n "  ÊäÈëÐÂÃÜÂë£º"
+echo -n "  è¾“å…¥æ–°å¯†ç ï¼š"
 read VPNPASSWD
 if [ -z $VPNPASSWD ]
 	then
-		echo -n "  ÃÜÂë²»ÄÜÎª¿Õ£¬ÇëÖØÐÂÊäÈë£º"
+		echo -n "  å¯†ç ä¸èƒ½ä¸ºç©ºï¼Œè¯·é‡æ–°è¾“å…¥ï¼š"
 		read VPNPASSWD
 			if [ -z $VPNPASSWD ]
 				then
-					echo  "  ÊäÈë´íÎó£¬ÏµÍ³´´½¨Ä¬ÈÏÃÜÂë£ºroot"
+					echo  "  è¾“å…¥é”™è¯¯ï¼Œç³»ç»Ÿåˆ›å»ºé»˜è®¤å¯†ç ï¼šroot"
 					VPNPASSWD=root;
 				else
 					userpasswd=root;
@@ -506,31 +506,31 @@ else
 	userpasswd=root;
 fi
 echo $ADMIN $VPNPASSWD >/passwd
-#echo -n "ÊäÈëÐÂÕËºÅ£º"
+#echo -n "è¾“å…¥æ–°è´¦å·ï¼š"
 #read ADMIN
-#echo -n "ÊäÈëÐÂÃÜÂë£º"
+#echo -n "è¾“å…¥æ–°å¯†ç ï¼š"
 #read VPNPASSWD
 #echo $ADMIN $VPNPASSWD >/passwd
 #echo $ADMIN >00
 #echo $VPNPASSWD >11
-echo '¡¶»¶Ó­Ê¹ÓÃÉ§±ÆÍô?OpenVPNÔÆÃâ¡·
+echo 'ã€Šæ¬¢è¿Žä½¿ç”¨éªšé€¼æ±ª?OpenVPNäº‘å…ã€‹
 
-OpenVPNÁ¬½ÓÕËºÅ' >info.txt
-echo ÄãµÄÕËºÅ£º$ADMIN >>info.txt
-echo ÄãµÄÃÜÂë£º$VPNPASSWD >>info.txt
+OpenVPNè¿žæŽ¥è´¦å·' >info.txt
+echo ä½ çš„è´¦å·ï¼š$ADMIN >>info.txt
+echo ä½ çš„å¯†ç ï¼š$VPNPASSWD >>info.txt
 echo '
-´´½¨ÕËºÅÃüÁî£ºecho ÕËºÅ ÃÜÂë >>/passwd
-Ê¾Àý£ºecho 123 456 >>/passwd £¨¼´¿É´´½¨ ÕËºÅ£º123 ÃÜÂë£º456£©
+åˆ›å»ºè´¦å·å‘½ä»¤ï¼šecho è´¦å· å¯†ç  >>/passwd
+ç¤ºä¾‹ï¼šecho 123 456 >>/passwd ï¼ˆå³å¯åˆ›å»º è´¦å·ï¼š123 å¯†ç ï¼š456ï¼‰
 
-É¾³ýÕËºÅÃüÁî£ºvi /passwd
-ÊäÈë i ¶ÔÎÄ¼þ½øÐÐÐÞ¸Ä£¬É¾³ýÄ¿±êÕËºÅºó£¬°´ Esc ÍË³ö±à¼­£¬
-²¢ÊäÈë :wq £¨±£´æÍË³ö£©
+åˆ é™¤è´¦å·å‘½ä»¤ï¼švi /passwd
+è¾“å…¥ i å¯¹æ–‡ä»¶è¿›è¡Œä¿®æ”¹ï¼Œåˆ é™¤ç›®æ ‡è´¦å·åŽï¼ŒæŒ‰ Esc é€€å‡ºç¼–è¾‘ï¼Œ
+å¹¶è¾“å…¥ :wq ï¼ˆä¿å­˜é€€å‡ºï¼‰
 
-ÊÖ»ú½ÓÈëµãÉèÖÃ½éÉÜ£º
-cmwap£ºÊÊÓÃÓÚ http-proxy 10.0.0.172 80 ´úÀíÊ¹ÓÃ
-cmnet£ºÊÊÓÃÓÚ ·þÎñ¶ËIP´úÀíÊ¹ÓÃ £¨ÏµÍ³Ä¬ÈÏÉú³ÉµÄÅäÖÃÄ¬ÈÏÎªcmnet£©' >>info.txt
+æ‰‹æœºæŽ¥å…¥ç‚¹è®¾ç½®ä»‹ç»ï¼š
+cmwapï¼šé€‚ç”¨äºŽ http-proxy 10.0.0.172 80 ä»£ç†ä½¿ç”¨
+cmnetï¼šé€‚ç”¨äºŽ æœåŠ¡ç«¯IPä»£ç†ä½¿ç”¨ ï¼ˆç³»ç»Ÿé»˜è®¤ç”Ÿæˆçš„é…ç½®é»˜è®¤ä¸ºcmnetï¼‰' >>info.txt
 echo 
-echo "ÕËºÅ´´½¨³É¹¦"
+echo "è´¦å·åˆ›å»ºæˆåŠŸ"
 sleep 3
 
 tar -zcvf ${VPNFILE} ./{OpenVPN.ovpn,ca.crt,ta.key,info.txt} >/dev/null 2>&1
@@ -539,29 +539,29 @@ clear
 echo
 # OpenVPN Installing ****************************************************************************
 echo 
-echo "ÕýÔÚ´´½¨ÏÂÔØÁ´½Ó£º"
+echo "æ­£åœ¨åˆ›å»ºä¸‹è½½é“¾æŽ¥ï¼š"
 sleep 2
 echo '=========================================================================='
-echo "ÉÏ´«Ö¤ÊéÎÄ¼þ£º"
+echo "ä¸Šä¼ è¯ä¹¦æ–‡ä»¶ï¼š"
 curl --upload-file ./${VPNFILE} https://transfer.sh/openvpn.tar.gz >url
-echo "ÉÏ´«³É¹¦£¡"
+echo "ä¸Šä¼ æˆåŠŸï¼"
 echo 
-echo -n "ÏÂÔØÁ´½Ó£º"
+echo -n "ä¸‹è½½é“¾æŽ¥ï¼š"
 cat url
 echo 
-echo "Çë¸´Á´½Óµ½ä¯ÀÀÆ÷ÏÂÔØËµÃ÷Êé/CAÖ¤Êé/OpenVPN³ÉÆ·ÅäÖÃÎÄ¼þ"
+echo "è¯·å¤é“¾æŽ¥åˆ°æµè§ˆå™¨ä¸‹è½½è¯´æ˜Žä¹¦/CAè¯ä¹¦/OpenVPNæˆå“é…ç½®æ–‡ä»¶"
 echo '=========================================================================='
 echo 
-echo OpenVPNÁ´½ÓÕËºÅ£º$ADMIN
-echo OpenVPNÁ´½ÓÃÜÂë£º$VPNPASSWD
+echo OpenVPNé“¾æŽ¥è´¦å·ï¼š$ADMIN
+echo OpenVPNé“¾æŽ¥å¯†ç ï¼š$VPNPASSWD
 echo 
-echo ²é¿´ÓÃ»§ÕËºÅ£ºcat /passwd
-echo ÕËºÅ/ÃÜÂë´æ·ÅÎ»ÖÃ£º/passwd
+echo æŸ¥çœ‹ç”¨æˆ·è´¦å·ï¼šcat /passwd
+echo è´¦å·/å¯†ç å­˜æ”¾ä½ç½®ï¼š/passwd
 echo 
-echo ÄúµÄIPÊÇ£º$IPAddress 
-echo £¨Èç¹û¼ì²â½á¹ûÓëÄúÊµ¼ÊIP²»·ûºÏ/¿Õ°×£¬Çë×ÔÐÐÐÞ¸ÄOpenVPN.ovpnÅäÖÃ£©
+echo æ‚¨çš„IPæ˜¯ï¼š$IPAddress 
+echo ï¼ˆå¦‚æžœæ£€æµ‹ç»“æžœä¸Žæ‚¨å®žé™…IPä¸ç¬¦åˆ/ç©ºç™½ï¼Œè¯·è‡ªè¡Œä¿®æ”¹OpenVPN.ovpné…ç½®ï¼‰
 Client='
-			     OpenVPN-2.3.10 °²×°Íê±Ï				
+			     OpenVPN-2.3.10 å®‰è£…å®Œæ¯•				
 			 Powered by sbwml.cn 2015-2016			   
 			      All Rights Reserved							    
 ==========================================================================';
