@@ -1,0 +1,2 @@
+将要推送的连接保存到urls.txt中，然后执行以下命令
+curl -H 'Content-Type:text/plain' --data-binary @urls.txt "http://data.zz.baidu.com/urls?site=hotwill.github.io&token=gBDTI82oPlUAy3Sj"
