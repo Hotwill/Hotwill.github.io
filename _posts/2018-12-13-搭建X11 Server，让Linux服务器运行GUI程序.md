@@ -27,7 +27,7 @@ X Window 系统最初是由 MIT 在 1984 年开发的，目的是为了给 Unix 
 安装步骤
 --------------------
 1. 在mac上安装X Windows服务器XQuartz。Windows和Linux上也有对应的软件，Google即可。
-2. 启动XQuartz，并在终端中运行`sudo xhost +x`。这条命令是允许所有客户端连接到改服务器，如果不执行，在Linux服务器那边报`No protocol specified`的错误。
-3. 在Linux服务器上定义一个环境变量：`export DISPLAY=ip:0.0`。ip为mac的ip地址，后面的0.0是X Windows服务器监听端口相对于6000的偏移量。如果X Windows服务器的监听端口是6000（默认），则为0.0；如果监听端口是6005（默认），则为5.0
+2. 启动XQuartz，并在终端中运行`sudo xhost +`。这条命令是允许所有客户端连接到改服务器，如果不执行，在Linux服务器那边报`No protocol specified`的错误。
+3. 在Linux服务器上定义一个环境变量：`export DISPLAY=ip:0.0`。ip为mac的ip地址，后面的0.0是X Windows服务器监听端口相对于6000的偏移量。如果X Windows服务器的监听端口是6000（默认），则为0.0；如果监听端口是6005，则为5.0
 4. 安装一个GUI小工具，如xclock，运行试试效果
 
