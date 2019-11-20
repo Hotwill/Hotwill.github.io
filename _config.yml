@@ -30,7 +30,7 @@ disqus:
   shortname: Hotwill
 
 # Build settings
-permalink: /:year/:month/:day/:title.html
+permalink: /:title.html
 markdown: kramdown
 highlighter: rouge
 sass:
