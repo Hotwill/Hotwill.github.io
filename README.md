@@ -1,6 +1,6 @@
 ### 我的博客
 
-地址：[https://hotwill.github.io](https://hotwill.github.io)
+地址：[https://blog.hotwill.cn/](https://blog.hotwill.cn)
 
 ### 特别感谢闫肃的博客[模板](https://github.com/suyan/suyan.github.io)
 
