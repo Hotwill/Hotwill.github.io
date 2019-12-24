@@ -42,3 +42,4 @@ https://blog.hotwill.cn/搭建X11-Server-让Linux服务器运行GUI程序.html
 https://blog.hotwill.cn/Windows下优秀软件收藏.html
 https://blog.hotwill.cn/Linux下进程后台运行的方法.html
 https://blog.hotwill.cn/C++生态-编译器-IDE-工具-测试等.html
+https://blog.hotwill.cn/emby启用https.html
