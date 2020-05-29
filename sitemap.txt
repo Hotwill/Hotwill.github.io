@@ -43,3 +43,4 @@ https://blog.hotwill.cn/Windows下优秀软件收藏.html
 https://blog.hotwill.cn/Linux下进程后台运行的方法.html
 https://blog.hotwill.cn/C++生态-编译器-IDE-工具-测试等.html
 https://blog.hotwill.cn/emby启用https.html
+https://blog.hotwill.cn/Linux下C++程序的编译链接与运行.html
