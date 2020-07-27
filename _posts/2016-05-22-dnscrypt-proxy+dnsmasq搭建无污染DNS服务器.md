@@ -17,7 +17,7 @@ tags: DNS服务器
 
 安装和配置参考[这篇文章](https://github.com/wongsyrone/LinuxNotes/blob/master/05.md)。
 文章中讲的是编译安装的方式，也可以直接在软件源中安装（软件源中不一定有）。
-安装dnscrypt-proxy之前必须安装libsodium，centros中，在安装libsodium之后要执行下面这两行命令，不然configure时会有错误：
+安装dnscrypt-proxy之前必须安装libsodium，centos中，在安装libsodium之后要执行下面这两行命令，不然configure时会有错误：
 
 ```bash
 # echo /usr/local/lib > /etc/ld.so.conf.d/usr_local_lib.conf
